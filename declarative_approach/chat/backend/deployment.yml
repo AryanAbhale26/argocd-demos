@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatino-backend
+  namespace: chatino
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: chatino-backend
+  template:
+    metadata:
+      labels:
+        app: chatino-backend
+    spec:
+      containers:
+        - name: backend
+          image: aryanabhale/chatino-backend:latest
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frotend-service
+  namespace: chatino
+spec:
+  type: ClusterIP
+  selector:
+    app: frontend-deployment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      
