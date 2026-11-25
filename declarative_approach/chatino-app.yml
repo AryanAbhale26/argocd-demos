@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: chatino-app
+  namespace: argocd
+spec:
+  project: default
+  
+  source:
+    repoURL: https://github.com/AryanAbhale26/argocd-demos.git
+    targetRevision: HEAD
+    path: declarative_approach/chat
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: chatino
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
