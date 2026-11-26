@@ -10,7 +10,8 @@ spec:
     targetRevision: main
     path: declarative_approach/online_shop
   destination:
-    server: https://kubernetes.default.svc   # Replace with your Cluster Url, To get run: `argocd cluster list`
+    server: https://kubernetes.default.svc
+    namespace: onlineshop   # Replace with your Cluster Url, To get run: `argocd cluster list`
   syncPolicy:
      automated:
         prune: true
