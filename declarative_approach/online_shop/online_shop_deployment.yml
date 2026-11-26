@@ -10,7 +10,9 @@ spec:
   template:
     metadata:
       labels:
-        app: online-shop
+       app: online-shop
+    annotaions:
+      notification-test: "v2"
     spec:
       containers:
       - name: online-shop
